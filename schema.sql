@@ -1,0 +1,15 @@
+
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE short (
+    id VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
+    creator_id INT NOT NULL,
+    url TEXT NOT NULL,
+    views INT4 NOT NULL DEFAULT 0,
+    FOREIGN KEY (creator_id) REFERENCES users(id)
+);

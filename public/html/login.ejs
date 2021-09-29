@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/login.css" />
+        <title>ISLA | Login</title>
+    </head>
+    <body class="d-flex justify-content-center flex-column min-vh-100 h-auto">
+        <%- include("navbar") %>
+        <div class="root container p-3">
+            <h2 class="title mb-3 text-center">Login</h2>
+            <form action="/api/login" class="form" method="POST">
+                <% if (locals.error) {%>
+                <p class="text-danger fw-normal m-0">Username or password is invalid</p>
+                <% } %>
+                <label class="fw-bold" for="input-user">Username</label>
+                <input class="form-control my-2" required type="text" name="username" id="input-user" placeholder="Username" />
+                <label class="fw-bold" for="input-password">Password</label>
+                <input class="form-control my-2" required type="password" name="password" id="input-password" placeholder="Password" />
+                <div class="d-flex flex-column justify-content-evenly align-items-center">
+                    <button type="submit" class="btn btn-primary w-25 fw-bold mt-3 btn-submit">Sign In!</button>
+                    <a href="/signup" class="signup fs-6 my-2">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

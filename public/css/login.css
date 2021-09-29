@@ -1,0 +1,27 @@
+.root {
+    border-radius: 1rem;
+    background-color: var(--bg-color);
+    box-shadow: 2px 3px 13px rgb(87, 87, 87);
+}
+
+.signup {
+    color: rgb(221, 221, 221);
+    font-weight: 500;
+}
+
+.form label:not(.tag)::after {
+    content: "*";
+    margin-left: 0.2rem;
+    font-size: 1.5rem;
+    color: var(--bs-danger);
+}
+
+@media (max-width: 768px) {
+    .form .btn-submit {
+        width: 40% !important;
+    }
+
+    .title {
+        margin-bottom: 0.5rem !important;
+    }
+}

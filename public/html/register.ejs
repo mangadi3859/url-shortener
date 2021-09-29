@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/login.css" />
+        <title>ISLA | Register</title>
+    </head>
+    <body class="d-flex justify-content-center flex-column min-vh-100 h-auto">
+        <%- include("navbar") %>
+        <div class="root container p-3">
+            <h2 class="title mb-3 text-center">Sign Up</h2>
+            <form action="/api/register" class="form" method="post">
+                <% error.forEach(err => { %>
+                <p class="text-danger fw-bold m-0"><%= err %></p>
+                <% }) %>
+                <label class="fw-bold" for="input-email">Email</label>
+                <input class="form-control my-2" required type="email" name="email" id="input-email" placeholder="Email" />
+                <label class="fw-bold" for="input-user">Username</label>
+                <input class="form-control my-2" required type="text" name="username" id="input-user" placeholder="Username" />
+                <label class="fw-bold" for="input-password">Password</label>
+                <input class="form-control my-2" required type="password" name="password" id="input-password" placeholder="Password" />
+                <div class="d-flex flex-column justify-content-evenly align-items-center">
+                    <button type="submit" class="btn btn-primary w-25 fw-bold mt-3 btn-submit">Sign Up!</button>
+                    <a href="/login" class="signup fs-6 my-2">Log In</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

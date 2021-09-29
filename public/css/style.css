@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: rgb(47, 2, 131);
+}
+
+.root {
+    color: black;
+}
+
+.container.root {
+    color: white;
+    min-width: 30vw;
+    width: auto;
+    max-width: 90vw;
+}
+
+@media (max-width: 768px) {
+    .container.root {
+        width: 85vw;
+    }
+}

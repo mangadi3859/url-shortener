@@ -1,0 +1,154 @@
+.nv-body > li > *,
+.nv-root > li > * {
+    color: inherit;
+    text-decoration: none;
+    border: none;
+    background: none;
+}
+
+.nv-dropdown {
+    --size: 3rem;
+    display: none;
+    z-index: 1;
+    border-radius: 6px;
+    border: 1.5px solid white;
+    width: var(--size);
+    height: var(--size);
+    padding: 0.2rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: transform 400ms ease-in-out;
+}
+
+.nv-dropdown .nv-line {
+    height: 0.35rem;
+    width: 90%;
+    background-color: white;
+}
+
+.nv-dropdown.active {
+    transform: rotate(90deg);
+}
+
+.nv-dropdown + .nv-body {
+    position: absolute;
+    background-color: rgba(var(--bs-primary-rgb), 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    right: 0;
+    left: calc(0px - 0.5rem);
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 400ms ease-in-out;
+}
+
+.nv-dropdown.active + .nv-body {
+    transform: translateX(0);
+}
+
+.nv-body > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(0px - var(--margin));
+    height: 5px;
+    background-color: var(--bg-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 150ms ease-in-out;
+}
+
+.navbar-brand {
+    z-index: 1;
+}
+
+.label-text {
+    color: inherit;
+    text-decoration: none;
+    transition: color 150ms ease-in-out;
+}
+
+.label-text:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nv-root {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+}
+
+.nv-body > li,
+.nv-root > li {
+    --margin: 0.2rem;
+    --padding: 0.5rem;
+    max-height: 100%;
+    height: 100%;
+    list-style-type: none;
+    float: left;
+    margin: var(--margin);
+    padding: var(--padding);
+    position: relative;
+    border-radius: 0.4rem;
+    transition: color 150ms ease-in-out;
+}
+
+.nv-body > li {
+    text-align: center;
+    height: auto;
+    width: 70%;
+}
+
+.nv-body > li > .btn-logout,
+.nv-root > li > .btn-logout {
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    max-height: inherit;
+}
+
+.nv-body > li:hover,
+.nv-body > li:focus,
+.nv-root > li:hover,
+.nv-root > li:focus {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nv-root > li::before {
+    content: "";
+    position: absolute;
+    left: calc(0px - var(--margin));
+    right: calc(0px - var(--margin));
+    bottom: calc(0px - 0.3rem - var(--margin) - var(--padding));
+    height: 5px;
+    background-color: var(--bg-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 150ms ease-in-out;
+}
+
+.nv-body > li:hover::before,
+.nv-body > li:focus::before,
+.nv-root > li:hover::before,
+.nv-root > li:focus::before {
+    transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+    .nv-root {
+        display: none;
+    }
+
+    .nv-dropdown {
+        display: flex;
+    }
+}
