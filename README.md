@@ -5,7 +5,7 @@ This just a small project i made to learn MySQL
 - you have to install `typescript` and `ts-node` to run this project
 
 ## Environment Variable
-You have to set a Environment Variable(`.env`)
+You have to set an Environment Variable(`.env`)
 
 - `DB_USER`: Your user (usually `root`)
 - `DB_PASSWORD`: Password for your user
